@@ -16,4 +16,5 @@
 
 # Swap Files and Binaries
 *.swp
+bin/
 bin/*.*
