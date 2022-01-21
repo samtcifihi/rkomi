@@ -31,7 +31,7 @@ func main() {
 
 	// output
 	// assumes many many flags
-	if !err {
+	if !err && len(os.Args) >= 3 {
 		fmt.Printf("White [%v] plays Black [%v] with no handicap stones and a komi of %v\n", os.Args[1], os.Args[2], komi)
 	}
 }
