@@ -17,12 +17,20 @@ Output can be piped into another command, or just outputed to the terminal.
 
 TODO: add single letter options with the `flag` package if possible, otherwise replace all flags with single letters based on their curent first character.
 
-Accepts either kyu-dan (mantissa optional) or OGS glicko-2 values (or a combination) for the strengths of two players, White and Black (default order, but flag `order` (default `order=white <- {white, black, uwate, shitate}`) may be passed to change this, along with the order players are displayed in the output).
+Accepts either kyu-dan (mantissa optional) or OGS glicko-2 values (or a combination) for the strengths of two players, White and Black.
 Optional flags (all except strengths for both players) may be sent before, after, or between the player strengths.
 
 `baseKomi`, the komi which would be used in an even game, is set by default to `7.0`, but may be changed with the flag `komi=<float64>`.
 `stoneWidth`, the number of points each stone is worth, is set by default to `14`, but may be changed with the flag `stonewidth=<uint>` (`int` internally).
 `preferHandicap`, which sets attempting to make up the skill gap with handicap stones before adding in reverse komi, is set by default to `false`, but may be changed with the flag `preferhandi=<bool>`.
+
+`order`, the order in which players are displayed in the output, is set by default to `white`.
+`random`, set if the colors are randomized in 0 handicap stone games, is set by default to `true`.
+`order={white, black, uwate, shitate, none}` changes `order` to the specified value.
+`random=<bool>` changes `random` to the specified value.
+For `order={white, black}`, the first player passed as an argument is the specified color if possible if `random=false`.
+For `order={uwate, shitate}`, if `random=false` and if possible, if the first player passed as an argument is the specified strength, uwate plays white, otherwise uwate plays black.
+For `order=none`, `random` has no effect, the players are displayed in the order they were passed as arguments, and their color is always randomized if possible.
 
 `minRkomi`, the minimum absolute value of reverse komi before baseKomi is factored in which may be returned, is set by default to `0`.
 `maxRkomi`, the maximum absolute value of reverse komi before baseKomi is factored in which may be returned, is set by default to `354`.
