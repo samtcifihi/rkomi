@@ -15,6 +15,8 @@ Output can be piped into another command, or just outputed to the terminal.
 
 ## Usage and Optional Flags
 
+TODO: add single letter options with the `flag` package if possible, otherwise replace all flags with single letters based on their curent first character.
+
 Accepts either kyu-dan (mantissa optional) or OGS glicko-2 values (or a combination) for the strengths of two players, White and Black (default order, but flag `order` (default `order=white <- {white, black, uwate, shitate}`) may be passed to change this, along with the order players are displayed in the output).
 Optional flags (all except strengths for both players) may be sent before, after, or between the player strengths.
 
